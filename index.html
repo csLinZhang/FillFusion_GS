@@ -139,6 +139,16 @@
     <div class="columns is-centered has-text-centered">
       <h2 class="title is-3">Overview</h2>
     </div>
+
+    <div class="content has-text-justified">
+      <p>
+        Our FillFusion-GS is a hybrid explicit-implicit LiDAR-camera fusion framework that effectively fill both inter-scan and unobserved structural voids for high-quality reconstruction. 
+        To our knowledge, this is the first cross-modal GS surface reconstruction scheme utilizing visual planar cues to compensate for LiDAR observation voids.
+      </p>
+    </div>
+
+
+
     <div class="content has-text-justified">
        <img src="./static/images/pipeline.png" style="width:100%; margin-bottom: 20px;" alt="Pipeline">
        <p>
@@ -153,44 +163,68 @@
   </div>
 </section>
 
+<!-- Dataset -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4">Jishi Dataset</h2>
+    </div>
+
+    <div class="content has-text-justified">
+      <p>
+        <strong>A Challenging Real-World Dataset:</strong> We captured and released the "Jishi" dataset using a handheld device. It features flexible trajectories, large-scale indoor environments, diverse lighting conditions, and precise hardware-synchronized multi-sensor measurements.
+      </p>
+    </div>
+
+    <div class="content has-text-justified">
+       <img src="./static/images/trajectory_jishi.png" style="width:100%; margin-bottom: 20px;" alt="Pipeline">
+       <p>
+        <strong>Trajectory visualization of the Jishi dataset.</strong> 
+        Black boxes highlight regions with sharp turns and significant altitude variations. Units are in meters.
+        The trajectories in the Jishi dataset exhibit sharp, rapid turns and significant altitude variations. 
+        Furthermore, the dataset is dominated by forward-moving trajectories, lacking the redundant scene observations found in other datasets. 
+        These characteristics pose significant challenges for scene reconstruction methods.
+    </div>
+  </div>
+</section>
+
+<!-- Results Section -->
 <!-- Results Section -->
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       
-      <h2 class="title is-3 has-text-centered">Results</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Results</h2>
 
-      <div id="results-carousel" class="carousel results-carousel">
-        
-        <!-- 第一张图 Item -->
-        <div class="item">
-            <!-- 图片 -->
-            <img src="./static/images/mesh_compare_mne.png" alt="Scene 00">
-            <!-- 文字 Caption -->
-            <h3 class="subtitle is-6">Qualitative surface reconstruction comparison on INS</h3>
+      <!-- 第一组：1和3合并，并排显示 -->
+      <div class="columns is-centered">
+        <div class="column is-half">
+            <h3 class="subtitle is-5 has-text-centered"><strong>Rendering results comparison on the Jishi(left) and INS(right)</strong></h3>
+            <p class="is-size-7 has-text-centered">Comparing surface reconstruction accuracy on INS and Jishi datasets.</p>
+            <div class="columns">
+                <div class="column"><img src="./static/images/render_compare_jishi.png" alt="INS Mesh"></div>
+                <div class="column"><img src="./static/images/render_compare_mne.png" alt="Jishi Mesh"></div>
+            </div>
+            
         </div>
-
-        <!-- 第二张图 Item -->
-        <div class="item">
-            <!-- 图片 -->
-            <img src="./static/images/render_compare_mne.png" alt="Scene 01">
-            <!-- 文字 Caption -->
-            <h3 class="subtitle is-6">Rendering results between different competitors on the INS dataset</h3>
-        </div>
-
-        <!-- 第三张图 Item -->
-        <div class="item">
-            <img src="./static/images/mesh_compare_jishi.png" alt="Scene 03">
-            <h3 class="subtitle is-6">Qualitative surface reconstruction comparison on the Jishi dataset</h3>
-        </div>
-
-        <!-- 第四张图 Item -->
-        <div class="item">
-            <img src="./static/images/render_compare_jishi.png" alt="Scene 04">
-            <h3 class="subtitle is-6">Rendering results between different competitors on the Jishi dataset</h3>
-        </div>        
-
       </div>
+
+      <!-- 第二组：第二张图单独显示 -->
+      <div class="columns is-centered" style="margin-top: 2rem;">
+        <div class="column is-half">
+            <h3 class="subtitle is-5 has-text-centered"><strong>Surface Reconstruction Comparison on MNE</strong></h3>
+            <img src="./static/images/mesh_compare_mne.png" alt="INS Render">
+        </div>
+      </div>
+
+      <!-- 第三组：第四张图单独显示 -->
+      <div class="columns is-centered" style="margin-top: 2rem;">
+        <div class="column is-half">
+            <h3 class="subtitle is-5 has-text-centered"><strong>Surface Reconstruction Comparison on Jishi Dataset</strong></h3>
+            <img src="./static/images/mesh_compare_jishi.png" alt="Jishi Render">
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
